@@ -10,7 +10,6 @@ function submitAnswers() {
     var q5 = document.forms["quizForm"]["q5"].value;
 
     // Validation
-
     for (let i = 1; i <= total; i++) {
 
         if (eval('q' + i) == null || eval('q' + i) == '') {
@@ -23,27 +22,17 @@ function submitAnswers() {
     var answers = ["b", "a", "d", "b", "d"];
 
     // Check Correct Answers
-    if (q1 == answers[0]) {
-        score++;
+    for (let i = 1; i <= total; i++) {
+
+        if (eval('q' + i) == answers[i - 1]) {
+            score++;
+        }
     }
 
-    if (q2 == answers[1]) {
-        score++;
-    }
 
-    if (q3 == answers[2]) {
-        score++;
-    }
-
-    if (q4 == answers[3]) {
-        score++;
-    }
-
-    if (q5 == answers[4]) {
-        score++;
-    }
-
-    alert("You scored " + score + " out of " + total);
+    // Display results
+    var results = document.getElementById('results');
+    results.innerHTML = '<h3>You scored <span>' + score + '</span> out of <span>' + total + '</span></h3>';
 
     // Not subbmiting the form
     return false
