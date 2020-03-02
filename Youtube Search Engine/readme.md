@@ -5,3 +5,5 @@
 - list searches
 - FancyBox for lightbox
 - Previous and next navigation
+
+Google API Console: console.developers.google.com
